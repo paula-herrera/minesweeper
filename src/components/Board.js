@@ -14,6 +14,7 @@ const Board = () => {
   const [nonMineCount, setNonMineCount] = useState(0);
   const [mineLocations, setMineLocations] = useState([]);
   const [gameOver, setGameOver] = useState(false);
+  const [won, setWon] = useState(false);
   const [customRows, setCustomRows] = useState(0);
   const [customCols, setCustomCols] = useState(0);
   const [customBombs, setCustomBombs] = useState(0);
@@ -48,6 +49,7 @@ const Board = () => {
   const reset = (r, c, b) => {
     freshBoard(rows, cols, bombs);
     setGameOver(false);
+    setWon(false);
   }
 
   // Reveal Cell
@@ -67,6 +69,7 @@ const Board = () => {
       setGrid(newRevealedBoard.arr);
       setNonMineCount(newRevealedBoard.newNonMinesCount);
       if (newRevealedBoard.newNonMinesCount === 0) {
+        setWon(true);
         setGameOver(true);
       }
     }
@@ -85,7 +88,7 @@ const Board = () => {
       </div>
       {/* <Timer /> */}
       <div style={{display: 'flex', alignItems: 'center', flexDirection: 'column', position: 'relative'}}>
-        {gameOver ? <Modal reset={reset}/> : <></>}
+        {gameOver ? <Modal reset={reset} won={won}/> : <></>}
         {grid.map((singleRow, i1) => {
           return (
             <div style={{display: "flex"}} key={i1}>
@@ -105,29 +108,31 @@ const Board = () => {
       </div>
       <div className="difficulty">
         <h2>Change Difficulty</h2>
-        <div>
+        <div className="difficulty-options">
+          <div>
+            <input
+              type="radio" id="beginner"
+              name="difficulty" value="beginner"
+              onClick={() => changeDifficulty(10, 10, 10)}
+            ></input>
+            <label htmlFor="beginner">Beginner (10 rows, 10 columns, 10 bombs)</label>
+          </div>
+          <div>
           <input
-            type="radio" id="beginner"
-            name="difficulty" value="beginner"
-            onClick={() => changeDifficulty(10, 10, 10)}
-          ></input>
-          <label htmlFor="beginner">Beginner (10 rows, 10 columns, 10 bombs)</label>
-        </div>
-        <div>
-        <input
-            type="radio" id="intermediate"
-            name="difficulty" value="intermediate"
-            onClick={() => changeDifficulty(16, 16, 40)}
-          ></input>
-          <label htmlFor="intermediate">Intermediate (16 rows, 16 columns, 40 bombs)</label>
-        </div>
-        <div>
-        <input
-            type="radio" id="expert"
-            name="difficulty" value="expert"
-            onClick={() => changeDifficulty(16, 30, 99)}
-          ></input>
-          <label htmlFor="expert">Expert (16 rows, 30 columns, 99 bombs)</label>
+              type="radio" id="intermediate"
+              name="difficulty" value="intermediate"
+              onClick={() => changeDifficulty(16, 16, 40)}
+            ></input>
+            <label htmlFor="intermediate">Intermediate (16 rows, 16 columns, 40 bombs)</label>
+          </div>
+          <div>
+          <input
+              type="radio" id="expert"
+              name="difficulty" value="expert"
+              onClick={() => changeDifficulty(16, 30, 99)}
+            ></input>
+            <label htmlFor="expert">Expert (16 rows, 30 columns, 99 bombs)</label>
+          </div>
         </div>
         <button
             onClick={() => reset()}
