@@ -83,7 +83,7 @@ const Board = () => {
           <img src={Shiba} alt="Shiba"></img>
         </div>
         <div>
-          <h1>Minesweeper</h1>
+          <h1>Dogesweeper</h1>
         </div>
       </div>
       {/* <Timer /> */}
