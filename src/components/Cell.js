@@ -57,7 +57,7 @@ const numColorCode = (num) => {
   } else if (num === 3) {
     return '#F7A117';
   } else if (num === 4) {
-    return '#F7A117';
+    return '#aad751';
   } else if (num === 5) {
     return '#F25252';
   } else if (num === 6) {

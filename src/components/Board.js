@@ -85,7 +85,7 @@ const Board = () => {
       </div>
       {/* <Timer /> */}
       <div style={{display: 'flex', alignItems: 'center', flexDirection: 'column', position: 'relative'}}>
-        {gameOver && <Modal reset={reset}/>}
+        {gameOver ? <Modal reset={reset}/> : <></>}
         {grid.map((singleRow, i1) => {
           return (
             <div style={{display: "flex"}} key={i1}>
@@ -132,34 +132,8 @@ const Board = () => {
         <button
             onClick={() => reset()}
           >
-            Update
+            Update Difficulty
         </button>
-        {/* <h3>Custom Board:</h3>
-        <div>
-          <div>
-            <label htmlFor="rows">Number of rows (10-100):</label>
-            <input type="number" id="rows" name="rows" min="10" max="100"
-              onChange={e => setCustomRows(e.target.value)}
-            ></input>
-          </div>
-          <div>
-            <label htmlFor="cols">Number of columns (10-100):</label>
-            <input type="number" id="cols" name="cols" min="10" max="100"
-              onChange={e => setCustomCols(e.target.value)}
-            ></input>
-          </div>
-          <div>
-            <label htmlFor="bombs">Number of bombs (1-9800):</label>
-            <input type="number" id="bombs" name="bombs" min="1" max="9800"
-              onChange={e => setCustomBombs(e.target.value)}
-            ></input>
-          </div>
-          <button
-            onClick={() => reset(customRows, customCols, customBombs)}
-          >
-            Update
-          </button>
-        </div> */}
       </div>
     </div>
     </>
