@@ -106,6 +106,10 @@ const Board = () => {
           );
         })}
       </div>
+      <div className="rules">
+          <p>Clear the board without finding one of Max's presents to win. Right click on a square if you suspect there's a present there. If you find a present, it's game over.
+          </p>
+        </div>
       <div className="difficulty">
         <h2>Change Difficulty</h2>
         <div className="difficulty-options">
@@ -141,6 +145,7 @@ const Board = () => {
         </button>
       </div>
     </div>
+    <div className="credits">Icons made by <a href="https://www.flaticon.com/authors/monkik" title="monkik">monkik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
     </>
   );
 };
