@@ -19,11 +19,11 @@ const Modal = ({reset}) => {
     >
       <div id="gameOver">
         <div>
-          <img src={flag}></img>
+          <img src={flag} alt='finish flag'></img>
         </div>
         <div>
         </div>
-        <div onClick={() => reset()}className="tryAgain">
+        <div onClick={() => reset()} className="tryAgain">
           Try Again
         </div>
       </div>

@@ -39,26 +39,14 @@ const Board = () => {
     setGrid(newGrid);
   }
 
+  const changeDifficulty = (r, c, b) => {
+    setRows(r);
+    setCols(c);
+    setBombs(b);
+  }
+
   const reset = (r, c, b) => {
-    if (customRows > 0) {
-      setRows(customRows)
-    }
-    if (customCols > 0) {
-      setCols(customCols)
-    }
-    if (customBombs > 0) {
-      setBombs(customBombs)
-    }
-    if (r === undefined) {
-      r = rows;
-    }
-    if (c === undefined) {
-      c = cols;
-    }
-    if (b === undefined) {
-      b = bombs;
-    }
-    freshBoard(r, c, b);
+    freshBoard(rows, cols, bombs);
     setGameOver(false);
   }
 
@@ -121,7 +109,7 @@ const Board = () => {
           <input
             type="radio" id="beginner"
             name="difficulty" value="beginner"
-            onClick={() => reset(10, 10, 10)}
+            onClick={() => changeDifficulty(10, 10, 10)}
           ></input>
           <label htmlFor="beginner">Beginner (10 rows, 10 columns, 10 bombs)</label>
         </div>
@@ -129,7 +117,7 @@ const Board = () => {
         <input
             type="radio" id="intermediate"
             name="difficulty" value="intermediate"
-            onClick={() => reset(16, 16, 40)}
+            onClick={() => changeDifficulty(16, 16, 40)}
           ></input>
           <label htmlFor="intermediate">Intermediate (16 rows, 16 columns, 40 bombs)</label>
         </div>
@@ -137,11 +125,16 @@ const Board = () => {
         <input
             type="radio" id="expert"
             name="difficulty" value="expert"
-            onClick={() => reset(16, 30, 99)}
+            onClick={() => changeDifficulty(16, 30, 99)}
           ></input>
           <label htmlFor="expert">Expert (16 rows, 30 columns, 99 bombs)</label>
         </div>
-        <h3>Custom Board:</h3>
+        <button
+            onClick={() => reset()}
+          >
+            Update
+        </button>
+        {/* <h3>Custom Board:</h3>
         <div>
           <div>
             <label htmlFor="rows">Number of rows (10-100):</label>
@@ -166,7 +159,7 @@ const Board = () => {
           >
             Update
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
     </>
