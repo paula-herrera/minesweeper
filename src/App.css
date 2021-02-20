@@ -1,38 +1,58 @@
+body {
+  margin: 0;
+  font-family: 'RocknRoll One', sans-serif;
+}
+
 .App {
   text-align: center;
+  margin: 0;
+  padding-top: 100px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  margin: 0 auto 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.cellStyle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: 800;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.modal {
+  height: 100%;
+  width: 100%;
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+#gameOver{
+  width: 300px;
+  height: 400px;
+  margin: 50px 50px;
+  background-color: white;
+  position: relative;
+  padding-top: 20px;
+  border-radius: 5px;
+}
+
+.tryAgain {
+  cursor: pointer;
+  margin: 0 50px;
+  border-radius: 7px;
+  background: #3086CC;
   color: white;
+  padding: 10px;
+  font-weight: 700;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.difficulty {
+  padding-top: 50px;
 }
