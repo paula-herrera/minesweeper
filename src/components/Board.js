@@ -107,7 +107,7 @@ const Board = () => {
         })}
       </div>
       <div className="rules">
-          <p>Clear the board without finding one of Max's presents to win. Right click (or press on mobile) on a square if you suspect there's a present there. If you find a present, it's game over.
+          <p>Clear the board without finding one of Max's presents to win. Right click on a square if you suspect there's a present there. If you find a present, it's game over.
           </p>
         </div>
       <div className="difficulty">
