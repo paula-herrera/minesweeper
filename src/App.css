@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: 'RocknRoll One', sans-serif;
+  font-size: 14px;
 }
 
 .App {
@@ -21,6 +22,7 @@ body {
 
 .rules p {
   text-align: justify;
+  padding: 10px;
 }
 
 .cellStyle {
@@ -86,7 +88,10 @@ button {
 .difficulty-options {
   display: flex;
   flex-direction: column;
-  padding-bottom: 25px;
+  padding: 0 10px 25px 10px;
+  align-items: flex-start;
+  margin: 0 auto 0 auto;
+  width: 450px;
 }
 
 .credits {

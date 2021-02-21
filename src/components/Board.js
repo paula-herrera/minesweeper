@@ -107,7 +107,7 @@ const Board = () => {
         })}
       </div>
       <div className="rules">
-          <p>Clear the board without finding one of Max's presents to win. Right click on a square if you suspect there's a present there. If you find a present, it's game over.
+          <p>Clear the board without finding one of Max's presents to win. Right click (or press on mobile) on a square if you suspect there's a present there. If you find a present, it's game over.
           </p>
         </div>
       <div className="difficulty">
@@ -119,7 +119,7 @@ const Board = () => {
               name="difficulty" value="beginner"
               onClick={() => changeDifficulty(10, 10, 10)}
             ></input>
-            <label htmlFor="beginner">Beginner (10 rows, 10 columns, 10 bombs)</label>
+            <label htmlFor="beginner">Beginner(10 rows, 10 columns, 10 bombs)</label>
           </div>
           <div>
           <input
@@ -127,7 +127,7 @@ const Board = () => {
               name="difficulty" value="intermediate"
               onClick={() => changeDifficulty(16, 16, 40)}
             ></input>
-            <label htmlFor="intermediate">Intermediate (16 rows, 16 columns, 40 bombs)</label>
+            <label htmlFor="intermediate">Intermediate(16 rows, 16 columns, 40 bombs)</label>
           </div>
           <div>
           <input
@@ -135,7 +135,7 @@ const Board = () => {
               name="difficulty" value="expert"
               onClick={() => changeDifficulty(16, 30, 99)}
             ></input>
-            <label htmlFor="expert">Expert (16 rows, 30 columns, 99 bombs)</label>
+            <label htmlFor="expert">Expert(16 rows, 30 columns, 99 bombs)</label>
           </div>
         </div>
         <button
