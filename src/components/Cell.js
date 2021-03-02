@@ -8,9 +8,9 @@ export default function Cell({details, updateFlag, revealCell}) {
     background: details.revealed
       ? details.value === 'X'
         ? '#FFD896'
-        : groundChexPattern(details.x, details.y)
+        : groundPattern(details.x, details.y)
       : grassPattern(details.x, details.y),
-    color: numColorCode(details.value),
+    color: numColors(details.value),
   }
 
   return (
@@ -25,7 +25,7 @@ export default function Cell({details, updateFlag, revealCell}) {
   )
 };
 
-const groundChexPattern = (x, y) => {
+const groundPattern = (x, y) => {
   if (x % 2 === 0 && y % 2 === 0) {
     return '#FFD797';
   } else if (x % 2 === 0 && y % 2 !== 0) {
@@ -39,17 +39,17 @@ const groundChexPattern = (x, y) => {
 
 const grassPattern = (x, y) => {
   if (x % 2 === 0 && y % 2 === 0) {
-    return "#aad751";
+    return "#A3D249";
   } else if (x % 2 === 0 && y % 2 !== 0) {
-    return "#a2d249";
+    return "#ABD750";
   } else if (x % 2 !== 0 && y % 2 === 0) {
-    return "#a2d249";
+    return "#ABD750";
   } else {
-    return "#aad751";
+    return "#A3D249";
   }
 };
 
-const numColorCode = (num) => {
+const numColors = (num) => {
   if (num === 1) {
     return '#3186CD';
   } else if (num === 2) {

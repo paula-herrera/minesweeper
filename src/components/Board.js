@@ -3,7 +3,6 @@ import createBoard from '../util/createBoard';
 import revealed from '../util/reveal';
 import Cell from './Cell';
 import Modal from './Modal';
-import Timer from './Timer';
 import Shiba from '../images/shiba.png'
 
 const Board = () => {
@@ -15,11 +14,7 @@ const Board = () => {
   const [mineLocations, setMineLocations] = useState([]);
   const [gameOver, setGameOver] = useState(false);
   const [won, setWon] = useState(false);
-  const [customRows, setCustomRows] = useState(0);
-  const [customCols, setCustomCols] = useState(0);
-  const [customBombs, setCustomBombs] = useState(0);
 
-  // ComponentDidMount
   useEffect(() => {
     freshBoard(rows, cols, bombs);
   }, [])
@@ -32,7 +27,7 @@ const Board = () => {
     setMineLocations(newBoard.mineLocation);
   }
 
-  // On Right Click / Flag Cell
+  // On Right Click/Flag or UnFlag Cell
   const updateFlag = (e, x, y) => {
     e.preventDefault();
     let newGrid = JSON.parse(JSON.stringify(grid));
@@ -44,12 +39,14 @@ const Board = () => {
     setGrid(newGrid);
   }
 
+  // Change Difficulty/Board
   const changeDifficulty = (r, c, b) => {
     setRows(r);
     setCols(c);
     setBombs(b);
   }
 
+  // Reset Game
   const reset = (r, c, b) => {
     freshBoard(rows, cols, bombs);
     setGameOver(false);

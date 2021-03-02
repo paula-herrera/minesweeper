@@ -8,11 +8,11 @@ body {
   text-align: center;
   margin: 0;
   padding-top: 100px;
-  padding-bottom: 150px;
+  padding-bottom: 50px;
 }
 
 .header {
-  margin: 0 auto 0 auto;
+  margin: 0 auto 50px auto;
 }
 
 .rules {
