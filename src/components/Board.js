@@ -36,7 +36,11 @@ const Board = () => {
   const updateFlag = (e, x, y) => {
     e.preventDefault();
     let newGrid = JSON.parse(JSON.stringify(grid));
-    newGrid[x][y].flagged = true;
+    if (newGrid[x][y].flagged === false) {
+      newGrid[x][y].flagged = true;
+    } else {
+      newGrid[x][y].flagged = false;
+    }
     setGrid(newGrid);
   }
 
