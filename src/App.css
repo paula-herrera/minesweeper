@@ -29,10 +29,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   cursor: pointer;
-  font-size: 30px;
+  font-size: 18px;
   font-weight: 800;
 }
 
@@ -55,16 +55,6 @@ body {
   padding: 20px;
 }
 
-/* #gameOver{
-  width: 300px;
-  height: 400px;
-  margin: 50px 50px;
-  background-color: white;
-  position: relative;
-  padding-top: 20px;
-  border-radius: 5px;
-} */
-
 .tryAgain,
 button {
   cursor: pointer;
@@ -76,22 +66,54 @@ button {
   font-weight: 700;
 }
 
-.difficulty {
-  padding-top: 20px;
+.options {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 50px;
 }
 
-.difficulty button {
+button {
   border: none;
-  font-family: 'RocknRoll One', sans-serif
+  font-family: 'RocknRoll One', sans-serif;
+  width: 200px;
+  margin-left: 0;
 }
 
-.difficulty-options {
+h2 {
+  text-align: left;
+  margin-top: 0;
+}
+
+.difficulty,
+.custom {
   display: flex;
   flex-direction: column;
-  padding: 0 10px 25px 10px;
+  justify-content: flex-start;
+  margin: 0 25px 0 25px;
+  background-color: #F1F1F1;
+  padding: 30px;
+}
+
+.difficulty-options,
+.custom-options {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 25px;
   align-items: flex-start;
-  margin: 0 auto 0 auto;
-  width: 450px;
+  width: 360px;
+}
+
+.custom-options div {
+  display: flex;
+  flex-direction: row;
+  width: 250px;
+  justify-content: space-between;
+}
+
+.custom-options input {
+  margin-right: 5px;
+  width: 60px;
 }
 
 .credits {
