@@ -2,6 +2,8 @@
 
 A cuter, dog-themed minesweeper game. Reveal every non-mine block on the board to win. Right click to flag a suspicious square. Choose a difficulty to play from beginner, intermediate, and expert game boards.
 
+[Demo](https://dogesweeper.herokuapp.com/)
+
 ## Using this App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
